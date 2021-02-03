@@ -1,5 +1,5 @@
 # Knowledge-Based-Systems
-This repository contains the project that we have made for the KBS course at FMI.
+
 Реализирайте система, основана на правила, която по данни за налични хранителни
 продукти предлага рецепти на ястия, които може да бъдат приготвени от тези продукти
 (https://spoonacular.com/food-api). Данните за продуктите да включват: наименование на
