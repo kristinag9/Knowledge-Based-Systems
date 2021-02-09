@@ -1,0 +1,1068 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://en.wikipedia.org/wiki/Banitsa#"
+     xml:base="https://en.wikipedia.org/wiki/Banitsa"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="https://en.wikipedia.org/wiki/Banitsa">
+        <rdfs:comment>A banitsa ontology that describes some banitsa recipes based on their filling.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#hasBase -->
+
+    <owl:ObjectProperty rdf:about="https://en.wikipedia.org/wiki/Banitsa#hasBase">
+        <rdfs:subPropertyOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasIngredient"/>
+        <owl:inverseOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#isBaseOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="https://en.wikipedia.org/wiki/Banitsa#BanitsaBase"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#hasFilling -->
+
+    <owl:ObjectProperty rdf:about="https://en.wikipedia.org/wiki/Banitsa#hasFilling">
+        <rdfs:subPropertyOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasIngredient"/>
+        <owl:inverseOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#isFillingOf"/>
+        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Banitsa#Banitsa"/>
+        <rdfs:range rdf:resource="https://en.wikipedia.org/wiki/Banitsa#BanitsaFilling"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#hasFlavor -->
+
+    <owl:ObjectProperty rdf:about="https://en.wikipedia.org/wiki/Banitsa#hasFlavor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:range rdf:resource="https://en.wikipedia.org/wiki/Banitsa#FlavorValuePartition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#hasIngredient -->
+
+    <owl:ObjectProperty rdf:about="https://en.wikipedia.org/wiki/Banitsa#hasIngredient">
+        <owl:inverseOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#isIngredientOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#isBaseOf -->
+
+    <owl:ObjectProperty rdf:about="https://en.wikipedia.org/wiki/Banitsa#isBaseOf">
+        <rdfs:subPropertyOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#isIngredientOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#isFillingOf -->
+
+    <owl:ObjectProperty rdf:about="https://en.wikipedia.org/wiki/Banitsa#isFillingOf">
+        <rdfs:subPropertyOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#isIngredientOf"/>
+        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Banitsa#BanitsaFilling"/>
+        <rdfs:range rdf:resource="https://en.wikipedia.org/wiki/Banitsa#Banitsa"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#isIngredientOf -->
+
+    <owl:ObjectProperty rdf:about="https://en.wikipedia.org/wiki/Banitsa#isIngredientOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#isMadeFrom -->
+
+    <owl:ObjectProperty rdf:about="https://en.wikipedia.org/wiki/Banitsa#isMadeFrom">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Banitsa#BanitsaDough"/>
+        <rdfs:range rdf:resource="https://en.wikipedia.org/wiki/Banitsa#DoughIngredients"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#AppleFilling -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#AppleFilling">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#FruitFilling"/>
+        <owl:disjointWith rdf:resource="https://en.wikipedia.org/wiki/Banitsa#PumpkinFilling"/>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#Banitsa -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#Banitsa">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#DomainThing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasBase"/>
+                <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#BanitsaBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#BanitsaBase -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#BanitsaBase">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#DomainThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#BanitsaDough -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#BanitsaDough">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#BanitsaBase"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#isMadeFrom"/>
+                        <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#EggsIngredient"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#isMadeFrom"/>
+                        <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#FlourIngredient"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#isMadeFrom"/>
+                        <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#WaterIngredient"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#BanitsaFilling -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#BanitsaFilling">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#DomainThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#BeetLeavesFilling -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#BeetLeavesFilling">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#VegetableFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFlavor"/>
+                <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#Sweet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#CabbageFilling -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#CabbageFilling">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#VegetableFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFlavor"/>
+                <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#Sour"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#CheeseFilling -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#CheeseFilling">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#WhiteCheeseFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFlavor"/>
+                <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#Salty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://en.wikipedia.org/wiki/Banitsa#FetaFilling"/>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#CinnamonFilling -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#CinnamonFilling">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#SweetFilling"/>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#DocksFilling -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#DocksFilling">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#VegetableFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFlavor"/>
+                <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#Salty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#DomainThing -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#DomainThing">
+        <owl:disjointWith rdf:resource="https://en.wikipedia.org/wiki/Banitsa#ValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#DoughIngredients -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#DoughIngredients">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#BanitsaBase"/>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#EggsFilling -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#EggsFilling">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#BanitsaFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFlavor"/>
+                <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#None"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#EggsIngredient -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#EggsIngredient">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#DoughIngredients"/>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#FetaFilling -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#FetaFilling">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#WhiteCheeseFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFlavor"/>
+                <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#Salty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#FlavorValuePartition -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#FlavorValuePartition">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#None"/>
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#Salty"/>
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#Sour"/>
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#Spicy"/>
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#Sweet"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#ValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#FlourIngredient -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#FlourIngredient">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#DoughIngredients"/>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#FruitBanitsa -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#FruitBanitsa">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#Banitsa"/>
+        <rdfs:comment>Banitsa that has only FruitFilling.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#FruitFilling -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#FruitFilling">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#BanitsaFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFlavor"/>
+                <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#Sweet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#HomeBanitsa -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#HomeBanitsa">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#NamedBanitsa"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#SugarFilling"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#WalnutsFilling"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#LeavenedSheets -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#LeavenedSheets">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#BanitsaDough"/>
+        <owl:disjointWith rdf:resource="https://en.wikipedia.org/wiki/Banitsa#PastrySheetss"/>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#LeekFilling -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#LeekFilling">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#OnionFilling"/>
+        <owl:disjointWith rdf:resource="https://en.wikipedia.org/wiki/Banitsa#RedOnionFilling"/>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#LuchnikBanitsa -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#LuchnikBanitsa">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#VegetableBanitsa"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFilling"/>
+                        <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#RedOnionFilling"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#VegetableBanitsa"/>
+        <rdfs:comment>A vegetable banitsa that has only RedOnionFilling.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#MangoldFilling -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#MangoldFilling">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#VegetableFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFlavor"/>
+                <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#Salty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#MeatBanitsa -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#MeatBanitsa">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#Banitsa"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFilling"/>
+                        <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#MeatFilling"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFilling"/>
+                        <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#MushroomFilling"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFilling"/>
+                        <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#RedOnionFilling"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>Banitsa that has MeatFilling, RedOnionFilling and MushroomFilling.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#MeatFilling -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#MeatFilling">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#BanitsaFilling"/>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#MilkFilling -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#MilkFilling">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#BanitsaFilling"/>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#MilkyBanitsa -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#MilkyBanitsa">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#Banitsa"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFilling"/>
+                        <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#EggsFilling"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFilling"/>
+                        <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#MilkFilling"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFilling"/>
+                        <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#SweetFilling"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>Banitsa that has only MilkFilling, EggsFilling and SweetFilling.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#MincedMeatFilling -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#MincedMeatFilling">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#MeatFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFlavor"/>
+                <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#Salty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#MushroomFilling -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#MushroomFilling">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#VegetableFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFlavor"/>
+                <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#Salty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#NamedBanitsa -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#NamedBanitsa">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#Banitsa"/>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#NettlesFilling -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#NettlesFilling">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#VegetableFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFlavor"/>
+                <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#Salty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#None -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#None">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#FlavorValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#NotSourCabbageFilling -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#NotSourCabbageFilling">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#CabbageFilling"/>
+        <owl:disjointWith rdf:resource="https://en.wikipedia.org/wiki/Banitsa#SourCabbageFilling"/>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#NutBanitsa -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#NutBanitsa">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#Banitsa"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFilling"/>
+                        <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#NutFilling"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>Banitsa that has only NutFilling.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#NutFilling -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#NutFilling">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#BanitsaFilling"/>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#OnionFilling -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#OnionFilling">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#VegetableFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFlavor"/>
+                <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#Spicy"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#ParsleyFilling -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#ParsleyFilling">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#VegetableFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFlavor"/>
+                <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#Salty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#PastrySheetss -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#PastrySheetss">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#BanitsaDough"/>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#PraznikBanitsa -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#PraznikBanitsa">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#VegetableBanitsa"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFilling"/>
+                        <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#LeekFilling"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#VegetableBanitsa"/>
+        <owl:disjointWith rdf:resource="https://en.wikipedia.org/wiki/Banitsa#ZelnikBanitsa"/>
+        <rdfs:comment>A vegetable banitsa that has only LeekOnionFilling.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#PumpkinFilling -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#PumpkinFilling">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#FruitFilling"/>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#RedOnionFilling -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#RedOnionFilling">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#OnionFilling"/>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#RiceFilling -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#RiceFilling">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#VegetableFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFlavor"/>
+                <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#Salty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#Salty -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#Salty">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#FlavorValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#ShtrudelBanitsa -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#ShtrudelBanitsa">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#FruitBanitsa"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFilling"/>
+                        <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#AppleFilling"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="https://en.wikipedia.org/wiki/Banitsa#TikvenikBanitsa"/>
+        <rdfs:comment>A fruit banitsa that has only AppleFilling.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#SodaFilling -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#SodaFilling">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#BanitsaFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFlavor"/>
+                <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#Salty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#SorrelFilling -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#SorrelFilling">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#VegetableFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFlavor"/>
+                <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#Salty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#Sour -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#Sour">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#FlavorValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#SourCabbageFilling -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#SourCabbageFilling">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#CabbageFilling"/>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#Spicy -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#Spicy">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#FlavorValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#SpinachFilling -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#SpinachFilling">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#VegetableFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFlavor"/>
+                <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#Salty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#SugarFilling -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#SugarFilling">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#SweetFilling"/>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#Sweet -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#Sweet">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#FlavorValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#SweetBanitsa -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#SweetBanitsa">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#Banitsa"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFilling"/>
+                        <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#SweetFilling"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>Banitsa that has only SweetFilling.
+.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#SweetFilling -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#SweetFilling">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#BanitsaFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFlavor"/>
+                <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#Sweet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#TikvenikBanitsa -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#TikvenikBanitsa">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#FruitBanitsa"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFilling"/>
+                        <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#PumpkinFilling"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>A fruit banitsa that has only PumpkinFilling.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#TraditionalBanitsa -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#TraditionalBanitsa">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#Banitsa"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFilling"/>
+                        <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#EggsFilling"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFilling"/>
+                        <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#MilkFilling"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFilling"/>
+                        <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#SodaFilling"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFilling"/>
+                        <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#WhiteCheeseFilling"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>Banitsa that has EggsFilling, CheeseFilling and MilkFilling which is YoghurtFilling.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#TutmanikBanitsa -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#TutmanikBanitsa">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#Banitsa"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFilling"/>
+                        <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#WhiteCheeseFilling"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>Banitsa that has only CheeseFilling.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#ValuePartition -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#ValuePartition"/>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#VanillaFilling -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#VanillaFilling">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#SweetFilling"/>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#VegetableBanitsa -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#VegetableBanitsa">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#Banitsa"/>
+        <rdfs:comment>Banitsa that has only VegetableFilling.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#VegetableFilling -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#VegetableFilling">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#BanitsaFilling"/>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#WalnutsFilling -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#WalnutsFilling">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#NutFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFlavor"/>
+                <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#None"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#WaterIngredient -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#WaterIngredient">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#DoughIngredients"/>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#WhiteCheeseFilling -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#WhiteCheeseFilling">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#BanitsaFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFlavor"/>
+                <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#Salty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#YoghurtFilling -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#YoghurtFilling">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Banitsa#MilkFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFlavor"/>
+                <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#Sour"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Banitsa#ZelnikBanitsa -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Banitsa#ZelnikBanitsa">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#VegetableBanitsa"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://en.wikipedia.org/wiki/Banitsa#hasFilling"/>
+                        <owl:someValuesFrom rdf:resource="https://en.wikipedia.org/wiki/Banitsa#CabbageFilling"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>A vegetable banitsa that has only CabbageFilling.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#Banitsa"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#BanitsaBase"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#BanitsaFilling"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#ValuePartition"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#BeetLeavesFilling"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#CabbageFilling"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#DocksFilling"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#MangoldFilling"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#MushroomFilling"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#NettlesFilling"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#OnionFilling"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#ParsleyFilling"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#RiceFilling"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#SorrelFilling"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#SpinachFilling"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#CinnamonFilling"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#SugarFilling"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#VanillaFilling"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#EggsFilling"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#FruitFilling"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#MeatFilling"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#MilkFilling"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#NutFilling"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#SodaFilling"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#SweetFilling"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#VegetableFilling"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#WhiteCheeseFilling"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#EggsIngredient"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#FlourIngredient"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#WaterIngredient"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#LuchnikBanitsa"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#PraznikBanitsa"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#ZelnikBanitsa"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#None"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#Salty"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#Sour"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#Spicy"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Banitsa#Sweet"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
